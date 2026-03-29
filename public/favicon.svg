@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Top Blue Part -->
+  <path d="M 26 37 L 75 14.5 L 69 50 L 26 71 Z" fill="#1a3b8e" />
+  <!-- Bottom Orange Part -->
+  <path d="M 26 71 L 47.5 60 L 67.5 73.5 L 46 84.5 Z" fill="#ff9d3a" />
+</svg>
