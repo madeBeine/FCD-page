@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-brand-blue: #1a3b8e;
+  --color-brand-orange: #ff5500;
+  --color-brand-bg: #f8fafc;
+  
+  --font-cairo: "Cairo", sans-serif;
+  --font-inter: "Inter", sans-serif;
+
+  --animate-marquee: marquee 25s linear infinite;
+  --animate-marquee2: marquee2 25s linear infinite;
+
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+  }
+  @keyframes marquee2 {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(0%); }
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-brand-bg text-slate-900 dark:bg-slate-900 dark:text-slate-50 antialiased transition-colors duration-300;
+    background-color: var(--color-brand-bg);
+    background-image: 
+      radial-gradient(circle at 15% 50%, rgba(26, 59, 142, 0.12), transparent 40%),
+      radial-gradient(circle at 85% 30%, rgba(255, 85, 0, 0.08), transparent 40%),
+      linear-gradient(to right, rgba(26, 59, 142, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 59, 142, 0.04) 1px, transparent 1px);
+    background-size: 100vw 100vh, 100vw 100vh, 40px 40px, 40px 40px;
+  }
+  
+  .dark body {
+    background-color: #0f172a;
+    background-image: 
+      radial-gradient(circle at 15% 50%, rgba(26, 59, 142, 0.2), transparent 40%),
+      radial-gradient(circle at 85% 30%, rgba(255, 85, 0, 0.15), transparent 40%),
+      linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 100vw 100vh, 100vw 100vh, 40px 40px, 40px 40px;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  html[dir="rtl"] {
+    font-family: var(--font-cairo);
+  }
+  
+  html[dir="ltr"] {
+    font-family: var(--font-inter);
+  }
+}
+
+.glass {
+  @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-sm;
+}
+
+.glass-dark {
+  @apply bg-slate-900/70 backdrop-blur-md border border-slate-700/50 shadow-sm;
+}
